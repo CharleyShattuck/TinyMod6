@@ -1,2 +1,2 @@
-# AVR32
-ITC Forth in C for the AVR 32u4 with 32 bit stacks, 16 bit program memory. Porting ARM code to AVR. The VM is written with Arduino Wiring, and Forth core and app are written using a target compiler written in gforth. The Forth compiler's output is a memory array that's used when compiling the VM. I hope that makes sense.
+# TinyMod6 firmware for the TinyMod6 steno keyboard
+ITC Forth in C and Forth for the AVR 32u4. 32 bit stacks, 16 bit program memory. The VM is written with Arduino Wiring, and Forth core and app are written using a target compiler written in gforth. The Forth compiler's output is a memory array that's used when compiling the VM. I hope that makes sense. 32 bit stacks meant to make this particular program easier to write.
