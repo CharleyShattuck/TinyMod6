@@ -11,4 +11,4 @@ create target-image target-size allot
 ```
 and , is defined to compile a 16 bit word into the next location in that space. All the rest of the high level Forth has , at the bottom.
 
-Save is run at the end to make a file called memory.h which, when compiled in Arduino, creates an array.
+Save is run at the end to make a file called memory.h which, when compiled in Arduino, creates an array. This array is the high level Forth code memory visible to the Forth programmer.
