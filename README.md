@@ -3,3 +3,12 @@ ITC Forth in C and Forth for the AVR 32u4. 32 bit stacks, 16 bit program memory.
 
 ## Architecture
 This is a target compiled Forth, made in two parts. The first part is done using gforth to make the higher level Forth. It's indirect threaded, meaning each Forth word is preceded by a code field, which contains a pointer to the common code for a class of words. This pointer actually is an index into a table of functions written in C and residing in a separate memory space. Since the target application runs in an AVR 32u4 microcontroller, the program memory space is in flash memory and so is the high level Forth code. Think of the high level Forth code as data. It's a C array of 16 bit words. When Forth code is compiled it becomes a file called memory.h to be used when compiling the C part using the Arduino compiler.
+
+## compiler.fs
+The key points of the target compiler are probably the words , and save. A memory space is declared with
+```
+create target-image target-size allot
+```
+and , is defined to compile a 16 bit word into the next location in that space. All the rest of the high level Forth has , at the bottom.
+
+Save is run at the end to make a file called memory.h which, when compiled in Arduino, creates an array.
