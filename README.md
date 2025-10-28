@@ -30,7 +30,7 @@ Then a lot of registers are defined. They are C variables of various sizes. They
 * R return stack pointer, 8 bits
 * P 16 bit word pointer into code memory, in ROM
 * S 16 bits, but addressing RAM in bytes
-* elapsed a large counter interactive timing
+* elapsed a large counter for interactive timing
 * D a 64 bit register used to store intermediate results of multiplication for */
 
 Then the stacks are defined as well as an array of data memory in RAM. *setup()* is defined for the Arduino compiler. Then all the code for the Forth words is defined as C functions without arguments. These functions use the global "registers" of the Forth virtual machine.
