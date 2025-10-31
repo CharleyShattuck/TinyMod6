@@ -37,7 +37,7 @@ host
 : turnkey target here 2/ 0 !-t ;
 
 \ code words have a code field address containing an index into
-\ a function array in the C part of this system. See TinyMod5.ino
+\ a function array in the C part of this system. See TinyMod6.ino
 target 2 org \ target-image is byte addressed here on the Forth side
 code exit  1 ,
 code abort  2 ,
