@@ -39,3 +39,8 @@ These functions are put into an executable array of functions, to be used in the
 
 ## main.fs
 The application source goes into the main.fs file. The last part of this file has the turnkey code, in two sections. The first section is the outer interpreter, for the interactive testing. It's commented out when you want the the application to run. The second part initializes the application and then falls into the infinite loop of the application.
+
+### The steno keyboard app
+main.fs starts with some constant definitions used to initialize I/O pins. Since constants reside in program flash and that memory is 16 bit word addressed, wconstant is used. There's no need for a 32 bit number, and no easy way to make an 8 bit constant.
+
+An array of 6 bytes is created in RAM, called data. This will be used later in the serial modes. Initialization, /data, loads the address of the data array into the A "register" and traverses the array using the word c!+, which stores a byte into the address contained in A and then increments A. This is inspired by arrayForth for the GA144. The words "pinMode" and "@MCP23017" are primitives written in C, using the Arduino library.
